@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/res">
+        <file>img/abc_ic_search_api_mtrl_alpha.png</file>
+        <file>img/ic_browser.png</file>
+        <file>img/loading.gif</file>
+    </qresource>
+</RCC>

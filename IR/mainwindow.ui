@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>654</width>
+    <height>604</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>Boolean Retrieval</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="res.qrc">
+    <normaloff>:/res/img/ic_browser.png</normaloff>:/res/img/ic_browser.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">#l_error{
+	color:red;
+}
+
+#centralWidget{
+	background: #f3f3f4;
+}
+
+QWidget {
+	color: #404244;
+	font-family: &quot;Titillium Web&quot;;
+	font-size: 12pt;
+}
+
+QLineEdit {
+	background: #fff;
+	border: none;
+}
+
+QTextEdit {
+	background: #fff;
+	border: none;
+	font-size:18px;
+}
+
+QPushButton {
+	background: #41cd52;
+	border: none;
+}
+
+QPushButton:hover {
+	background: #21be2b;
+}
+
+QPushButton:pressed {
+	padding-top:-2px
+}
+
+#l_status,#l_time {
+	font-size:12px;
+	font-family:&quot;Source Code Pro&quot;;
+}
+
+#scrollArea{
+	border:none;
+}
+#scrollAreaWidgetContents{
+	background: white;
+}
+
+QMessageBox QPushButton {
+	height: 24px;
+	width: 110px;
+}</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QLabel" name="label">
+      <property name="text">
+       <string>Buscar</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QTextEdit" name="te_buscar">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>43</height>
+         </size>
+        </property>
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-family:'Titillium Web'; font-size:12pt;&quot;&gt;Para las búsquedas usted puede usar los operadores binarios AND, OR y NOT; además de búsquedas mas avanzadas usando paréntesis, ejemplo:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-family:'Titillium Web'; font-size:12pt;&quot;&gt;Brutus &lt;/span&gt;&lt;span style=&quot; font-family:'Titillium Web'; font-size:12pt; font-weight:600; color:#21be2b;&quot;&gt;OR&lt;/span&gt;&lt;span style=&quot; font-family:'Titillium Web'; font-size:12pt; font-weight:600; color:#ff0000;&quot;&gt;(&lt;/span&gt;&lt;span style=&quot; font-family:'Titillium Web'; font-size:12pt;&quot;&gt;Caesar &lt;/span&gt;&lt;span style=&quot; font-family:'Titillium Web'; font-size:12pt; font-weight:600; color:#21be2b;&quot;&gt;AND NOT&lt;/span&gt;&lt;span style=&quot; font-family:'Titillium Web'; font-size:12pt;&quot;&gt; Calpurnia&lt;/span&gt;&lt;span style=&quot; font-family:'Titillium Web'; font-size:12pt; font-weight:600; color:#ff0000;&quot;&gt;)&lt;/span&gt;&lt;span style=&quot; font-family:'CMSSBX10'; font-size:10pt; color:#000000;&quot;&gt;&lt;br/&gt;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="inputMethodHints">
+         <set>Qt::ImhNone</set>
+        </property>
+        <property name="verticalScrollBarPolicy">
+         <enum>Qt::ScrollBarAlwaysOff</enum>
+        </property>
+        <property name="horizontalScrollBarPolicy">
+         <enum>Qt::ScrollBarAlwaysOff</enum>
+        </property>
+        <property name="tabChangesFocus">
+         <bool>true</bool>
+        </property>
+        <property name="lineWrapMode">
+         <enum>QTextEdit::NoWrap</enum>
+        </property>
+        <property name="html">
+         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Titillium Web'; font-size:18px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pb_buscar">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>43</width>
+          <height>43</height>
+         </size>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="res.qrc">
+          <normaloff>:/res/img/abc_ic_search_api_mtrl_alpha.png</normaloff>:/res/img/abc_ic_search_api_mtrl_alpha.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>36</width>
+          <height>36</height>
+         </size>
+        </property>
+        <property name="shortcut">
+         <string>Ctrl+Return</string>
+        </property>
+        <property name="autoRepeat">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="2" column="0">
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <item>
+       <widget class="QLabel" name="l_error">
+        <property name="text">
+         <string>Error en la busqueda</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_3">
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="3" column="0">
+     <layout class="QHBoxLayout" name="horizontalLayout_4">
+      <item>
+       <widget class="QScrollArea" name="scrollArea">
+        <property name="verticalScrollBarPolicy">
+         <enum>Qt::ScrollBarAsNeeded</enum>
+        </property>
+        <property name="sizeAdjustPolicy">
+         <enum>QAbstractScrollArea::AdjustIgnored</enum>
+        </property>
+        <property name="widgetResizable">
+         <bool>true</bool>
+        </property>
+        <widget class="QWidget" name="scrollAreaWidgetContents">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>634</width>
+           <height>386</height>
+          </rect>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <item>
+           <widget class="QLabel" name="item1">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+            <property name="openExternalLinks">
+             <bool>true</bool>
+            </property>
+            <property name="textInteractionFlags">
+             <set>Qt::TextBrowserInteraction</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="item2">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+            <property name="openExternalLinks">
+             <bool>true</bool>
+            </property>
+            <property name="textInteractionFlags">
+             <set>Qt::TextBrowserInteraction</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="item3">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+            <property name="openExternalLinks">
+             <bool>true</bool>
+            </property>
+            <property name="textInteractionFlags">
+             <set>Qt::TextBrowserInteraction</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="item4">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+            <property name="openExternalLinks">
+             <bool>true</bool>
+            </property>
+            <property name="textInteractionFlags">
+             <set>Qt::TextBrowserInteraction</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="item5">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+            <property name="openExternalLinks">
+             <bool>true</bool>
+            </property>
+            <property name="textInteractionFlags">
+             <set>Qt::TextBrowserInteraction</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="4" column="0">
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QPushButton" name="pb_pp">
+        <property name="text">
+         <string>Primera pag.</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pb_pa">
+        <property name="text">
+         <string>Pag. anterior</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pb_ps">
+        <property name="text">
+         <string>Pag. siguiente</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pb_up">
+        <property name="text">
+         <string>Última pag.</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="5" column="0">
+     <layout class="QHBoxLayout" name="horizontalLayout_5">
+      <item>
+       <widget class="QLabel" name="l_time">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="l_status">
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>654</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuEdit">
+    <property name="title">
+     <string>&amp;Archivo</string>
+    </property>
+    <widget class="QMenu" name="menuSeleccionar_Modelo">
+     <property name="title">
+      <string>Seleccionar &amp;Modelo</string>
+     </property>
+     <addaction name="actionBooleano"/>
+     <addaction name="actionVectorial"/>
+     <addaction name="action_Probabil_stico"/>
+    </widget>
+    <addaction name="action_Nueva_Busqueda"/>
+    <addaction name="menuSeleccionar_Modelo"/>
+    <addaction name="separator"/>
+    <addaction name="actionClose"/>
+   </widget>
+   <widget class="QMenu" name="menu_Ayuda">
+    <property name="title">
+     <string>A&amp;yuda</string>
+    </property>
+    <addaction name="actionAcerca_de"/>
+   </widget>
+   <widget class="QMenu" name="menu_Editar">
+    <property name="title">
+     <string>&amp;Editar</string>
+    </property>
+    <addaction name="actionBuscar"/>
+   </widget>
+   <addaction name="menuEdit"/>
+   <addaction name="menu_Editar"/>
+   <addaction name="menu_Ayuda"/>
+  </widget>
+  <action name="actionClose">
+   <property name="text">
+    <string>&amp;Salir</string>
+   </property>
+  </action>
+  <action name="actionAcerca_de">
+   <property name="text">
+    <string>Acerca &amp;de...</string>
+   </property>
+  </action>
+  <action name="actionBuscar">
+   <property name="text">
+    <string>&amp;Buscar</string>
+   </property>
+  </action>
+  <action name="action_Nueva_Busqueda">
+   <property name="text">
+    <string>&amp;Nueva Colección</string>
+   </property>
+  </action>
+  <action name="actionBooleano">
+   <property name="text">
+    <string>&amp;Booleano</string>
+   </property>
+  </action>
+  <action name="actionVectorial">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>&amp;Vectorial</string>
+   </property>
+  </action>
+  <action name="action_Probabil_stico">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>&amp;Probabilístico</string>
+   </property>
+  </action>
+  <action name="action20groupnews">
+   <property name="text">
+    <string>Group News</string>
+   </property>
+   <property name="toolTip">
+    <string>20,000 documentos</string>
+   </property>
+  </action>
+  <action name="action_Otras">
+   <property name="text">
+    <string>Cargar Nue&amp;va</string>
+   </property>
+  </action>
+  <action name="actionmovies_5000">
+   <property name="text">
+    <string>Movies 5 000</string>
+   </property>
+   <property name="toolTip">
+    <string>5,000 documentos</string>
+   </property>
+  </action>
+  <action name="actionmovies_10_000_doc">
+   <property name="text">
+    <string>Movies 10 000</string>
+   </property>
+   <property name="toolTip">
+    <string>10,000 documentos</string>
+   </property>
+  </action>
+  <action name="action_Reportes_radiol_gicos">
+   <property name="text">
+    <string>&amp;Reportes radiológicos</string>
+   </property>
+   <property name="toolTip">
+    <string>20 documentos</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <tabstops>
+  <tabstop>te_buscar</tabstop>
+  <tabstop>pb_buscar</tabstop>
+  <tabstop>pb_pp</tabstop>
+  <tabstop>pb_pa</tabstop>
+  <tabstop>pb_ps</tabstop>
+  <tabstop>pb_up</tabstop>
+ </tabstops>
+ <resources>
+  <include location="res.qrc"/>
+ </resources>
+ <connections/>
+</ui>
